@@ -12,7 +12,11 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
+    env:
+      AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
 
     steps:
       - name: Checkout code
