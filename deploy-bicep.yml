@@ -1,5 +1,6 @@
 # Login to Azure with service principal using secret
-# Deploy main.bicep to resource group rg-copilotdemo in west-europe
+# Deploy main.bicep to resource group rg-copilotdemo in westeurope
+
 name: Deploy Bicep Template
 
 on:
@@ -41,4 +42,3 @@ jobs:
 
       - name: Logout of Azure
         run: az logout
-
