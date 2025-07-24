@@ -12,6 +12,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C3412A2E-762B-4931-A986-66C819306DDD}"
 	ProjectSection(SolutionItems) = preProject
 		ci.yml = ci.yml
+		deploy-bicep.yml = deploy-bicep.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{79223BAA-2C0A-47EB-92B7-D07085F6C26E}"
+	ProjectSection(SolutionItems) = preProject
+		main.bicep = main.bicep
 	EndProjectSection
 EndProject
 Global
@@ -34,6 +40,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C3412A2E-762B-4931-A986-66C819306DDD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{79223BAA-2C0A-47EB-92B7-D07085F6C26E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B1639CD-22A6-4B81-8967-1551122A6286}
