@@ -1,5 +1,3 @@
-// Small unnecessary change to trigger the workflow
-
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'asp-copilotdemo-westeuropa'
   location: 'westeurope'
@@ -19,9 +17,9 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: appServicePlan.id
     httpsOnly: true
-  }
-  siteConfig: {
-    linuxFxVersion: 'DOTNET|8.0'
+    siteConfig: {
+      linuxFxVersion: 'DOTNET|8.0'
+    }
   }
   tags: {
     environment: 'demo'
@@ -29,4 +27,3 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
     owner: 'HansVanSoom'
   }
 }
-
