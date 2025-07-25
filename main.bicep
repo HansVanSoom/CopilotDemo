@@ -1,4 +1,4 @@
-//Small unnecessary change to trigger the workflow!
+//Small unnecessary change to trigger the workflow
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'asp-copilotdemo-westeuropa'
@@ -20,7 +20,7 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
     serverFarmId: appServicePlan.id
     httpsOnly: true
     siteConfig: {
-      linuxFxVersion: 'DOTNET:9.0' // Tell Azure to run .NET 9 on Linux
+      linuxFxVersion: 'DOTNET|8.0' // Tell Azure to run .NET 8 (!) on Linux
     }
   }
   tags: {
