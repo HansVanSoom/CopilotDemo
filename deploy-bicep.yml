@@ -1,5 +1,5 @@
 # Login to Azure with service principal using secret
-# Deploy main.bicep to resource group rg-copilotdemo in westeurope
+# Deploy main.bicep to resource group rg-copilotdemo in West-Europe
 
 name: Deploy Bicep Template
 
