@@ -1,4 +1,4 @@
-//Small unnecessary change to trigger the workflow
+// Small unnecessary change to trigger the workflow
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'asp-copilotdemo-westeuropa'
@@ -15,13 +15,13 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
 resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   name: 'copilotdemo-web-hvs'
   location: 'westeurope'
-  kind: 'app,linux' // Optional: explicitly define it's a Linux app
+  kind: 'app,linux'
   properties: {
     serverFarmId: appServicePlan.id
     httpsOnly: true
-    siteConfig: {
-      linuxFxVersion: 'DOTNET|8.0' // Tell Azure to run .NET 8 (!) on Linux
-    }
+  }
+  siteConfig: {
+    linuxFxVersion: 'DOTNET|8.0'
   }
   tags: {
     environment: 'demo'
@@ -29,5 +29,4 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
     owner: 'HansVanSoom'
   }
 }
-
 
