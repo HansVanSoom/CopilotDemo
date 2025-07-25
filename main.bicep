@@ -4,10 +4,10 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'asp-copilotdemo-westeuropa'
   location: 'westeurope'
   sku: {
-    name: 'F1'
-    tier: 'Free'
-    size: 'F1'
-    family: 'F'
+    name: 'B1'
+    tier: 'Basic'
+    size: 'B1'
+    family: 'B'
     capacity: 1
   }
 }
@@ -29,4 +29,5 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
     owner: 'HansVanSoom'
   }
 }
+
 
