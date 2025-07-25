@@ -1,6 +1,8 @@
+param location string = 'westeurope'
+
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'asp-copilotdemo-westeuropa'
-  location: 'westeurope'
+  location: location
   sku: {
     name: 'B1'
     tier: 'Basic'
@@ -8,17 +10,21 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
     family: 'B'
     capacity: 1
   }
+  kind: 'linux'
+  properties: {
+    reserved: true
+  }
 }
 
 resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   name: 'copilotdemo-web-hvs'
-  location: 'westeurope'
+  location: location
   kind: 'app,linux'
   properties: {
     serverFarmId: appServicePlan.id
     httpsOnly: true
     siteConfig: {
-      linuxFxVersion: 'DOTNET|8.0'
+      linuxFxVersion: 'DOTNETCORE|8.0'
     }
   }
   tags: {
