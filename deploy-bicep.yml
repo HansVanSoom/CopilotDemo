@@ -38,7 +38,7 @@ jobs:
           az deployment group create \
             --resource-group rg-copilotdemo \
             --template-file main.bicep \
-            --location westeurope
 
       - name: Logout of Azure
         run: az logout
+
