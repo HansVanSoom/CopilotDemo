@@ -1,0 +1,44 @@
+# Login to Azure with service principal using secret
+# Deploy main.bicep to resource group rg-copilotdemo in westeurope
+
+name: Deploy Bicep Template
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'main.bicep'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore NuGet packages
+        run: dotnet restore
+
+      - name: Build the solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Bicep Template
+        run: |
+          az deployment group create \
+            --resource-group rg-copilotdemo \
+            --template-file main.bicep \
+            --location westeurope
+
+      - name: Logout of Azure
+        run: az logout
