@@ -20,7 +20,7 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
     serverFarmId: appServicePlan.id
     httpsOnly: true
     siteConfig: {
-      linuxFxVersion: 'DOTNET|9.0' // Tell Azure to run .NET 9 on Linux
+      linuxFxVersion: 'DOTNET:9.0' // Tell Azure to run .NET 9 on Linux
     }
   }
   tags: {
