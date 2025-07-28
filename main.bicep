@@ -17,7 +17,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
 }
 
 resource webApp 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'copilotdemo-web-hvs'
+  name: 'copilotdemo-web-hvs-28071036'
   location: location
   kind: 'app,linux'
   properties: {
